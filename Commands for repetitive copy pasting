@@ -1,0 +1,16 @@
+*****R1, Access Switches *******
+enable secret jeremysitlab
+username cisco secret ccna
+line console 0
+login local
+exec-timeout 30
+logging synchronous
+
+
+*****Core, Distribution switches*****
+enable algorithm-type scrypt secret jeremysitlab
+username cisco algorithm-type scrypt secret ccna
+line console 0
+login local
+exec-timeout 30
+logging synchronous
