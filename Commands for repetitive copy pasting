@@ -230,3 +230,10 @@ interface vlan 30
  standby 4 ip 10.5.0.1
  standby 4 priority 105
  standby 4 preempt
+
+******Part 4, Step 2*****
+***ASW-A2, ASW-A3, ASW-B1, ASW-B2, ASW-B3***
+interface f0/1
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
