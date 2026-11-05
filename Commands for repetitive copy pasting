@@ -237,3 +237,8 @@ interface f0/1
  spanning-tree portfast
  spanning-tree bpduguard enable
 
+
+******Part 6, Step 4*****
+***All devices***
+ip domain-name jeremysitlab.com
+ip name-server 10.5.0.4
