@@ -242,3 +242,51 @@ interface f0/1
 ***All devices***
 ip domain-name jeremysitlab.com
 ip name-server 10.5.0.4
+
+
+
+******Part 6, Step 6*****
+***All switches***
+ntp authentication-key 1 md5 ccna
+ntp trusted-key 1
+ntp server 10.0.0.76 key 1
+
+
+******Part 6, Step 7,8*****
+***All devices***
+snmp-server community SNMPSTRING ro
+
+logging 10.5.0.4
+logging trap debugging
+logging buffered 8192
+
+******Part 6, Step 10*****
+***All devices***
+crypto key generate rsa
+4096
+ip ssh version 2
+access-list 1 permit 10.1.0.0 0.0.0.255
+line vty 0 15
+ access-class 1 in 
+ transport input ssh
+ login local
+ logging synchronous
+ exit
+do write
+
+
+^^^^^^^^^as i have disabled authentication system for now, i will have to check the fpt server again after completing all the tasks^^^^^^
+
+******Part 6, Step 13*****
+***R1, Core switches and Distribution switches***
+no cdp run
+lldp run
+
+do wr
+
+
+***Access switches***
+no cdp run
+lldp run
+interface f0/1
+ no lldp transmit
