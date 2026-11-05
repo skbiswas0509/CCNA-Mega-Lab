@@ -290,3 +290,18 @@ no cdp run
 lldp run
 interface f0/1
  no lldp transmit
+
+
+******Part 7, Step 2*****
+***ASW-A2, ASW-B1, ASW-B3***
+interface f0/1
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+
+***ASW-A2, ASW-A3, ASW-B2***
+interface f0/1
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
