@@ -2,18 +2,21 @@
 enable secret jeremysitlab
 username cisco secret ccna
 line console 0
-login local
-exec-timeout 30
-logging synchronous
-
+ login local
+ exec-timeout 30
+ logging synchronous
+ exit
+do wr
 
 *****Core, Distribution switches*****
 enable algorithm-type scrypt secret jeremysitlab
 username cisco algorithm-type scrypt secret ccna
 line console 0
-login local
-exec-timeout 30
-logging synchronous
+ login local
+ exec-timeout 30
+ logging synchronous
+ exit
+do wr
 
 
 ******Part 2, Step 3*****
